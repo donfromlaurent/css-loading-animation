@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            margin-left: 20px;
+            font-size: 20px;
+            font-family: sans-serif;
+        }
+       
+        .load{
+            margin-top: 20%;
+            margin-left: 50%;
+        }
+        .loading{
+            display: flex;
+            margin-top: 30px;
+        }
+        .one, .two, .three{
+            border-radius: 50%;
+            background: #fff;
+            width: 25px;
+            height: 25px;
+            margin-left: 20px;
+        }
+        .one{
+            animation: load 1s 1.6s infinite linear;
+            background: yellow;
+        }
+        .two{
+            animation: load 1s -0.8s infinite linear;
+            background: green;
+        }
+        .three{
+            animation: load 1s  infinite linear;
+            background: red;
+        }
+        @keyframes load {
+            0%, 50%{
+                transform: scale(0);
+            }
+            20%, 80%{
+                transform: scale(1.8);
+            }
+        }
+        .page{
+            display: none;
+        }
+    </style>
+</head>
+<body onload="myTime();">
+    <div class="load">
+        <p>Loading....</p>
+        <div class="loading">
+            <div class="one"></div>
+            <div class="two"></div>
+            <div class="three"></div>
+        </div>
+    </div>
+    <div class="page">
+        <h1>Programming is really cool</h1>
+        <p>Come code with me</p>
+        <p>hello world</p>
+        <p> Jonny @devs</p>
+    </div>
+    <script>
+        var tim;
+        function myTime(){
+            tim = setTimeout(loadPage, 3000);
+        }
+        function loadPage(){
+            document.querySelector(".load").style.display = "none";
+            document.querySelector(".page").style.display = "block";
+        }
+    </script>
+</body>
+</html>
